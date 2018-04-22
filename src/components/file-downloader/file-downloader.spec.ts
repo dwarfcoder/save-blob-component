@@ -1,9 +1,9 @@
 import { flush, render } from '@stencil/core/testing';
-import { FileDownloader } from './file-downloader';
+import { SaveBlobComponent } from './file-downloader';
 
 describe('file-downloader', () => {
     it('should build', () => {
-        expect(new FileDownloader()).toBeTruthy();
+        expect(new SaveBlobComponent()).toBeTruthy();
     });
 
     describe('rendering', () => {
@@ -25,7 +25,7 @@ describe('file-downloader', () => {
             });
 
             element = await render({
-                components : [FileDownloader],
+                components : [SaveBlobComponent],
                 html: '<file-downloader></file-downloader>'
             });
         });

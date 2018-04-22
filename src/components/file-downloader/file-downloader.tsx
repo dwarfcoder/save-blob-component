@@ -5,7 +5,7 @@ import { Component, Prop, Method } from '@stencil/core';
   styleUrl: 'file-downloader.css',
   shadow: true
 })
-export class FileDownloader {
+export class SaveBlobComponent {
 
   @Prop() url: string;
   @Prop() fileName: string;
