@@ -1,5 +1,7 @@
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'saveblobcomponent',
+  generateDistribution: true,
+  serviceWorker: false,  
   outputTargets:[
     { 
       type: 'dist' 

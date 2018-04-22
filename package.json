@@ -2,10 +2,13 @@
   "name": "save-blob-component",
   "version": "0.0.7",
   "description": "Simple File Downloader",
+  "main": "dist/saveblobcomponent.js",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/mycomponent.js",
+  "browser": "dist/saveblobcomponent.js",
   "scripts": {
     "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
