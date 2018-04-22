@@ -8,20 +8,19 @@ import { Component, Prop, Method } from '@stencil/core';
 export class FileDownloader {
 
   @Prop() url: string;
+  @Prop() fileName: string;
+  @Prop() opts: any;
 
   @Method()
   async makeRequest(url: string, options) {
-
     if(!url){
       throw new Error('No url provided');
     }
 
     try{
       var response = await fetch(url, options || {});
-
-      var blob = await response.blob();
-
-      if(response.status === 200){
+      if(response.ok){
+        let blob = await response.blob();
         return blob;
       }
 
@@ -32,14 +31,41 @@ export class FileDownloader {
     }
   }
 
+  downloadFile(event: UIEvent){
+    this.makeRequest(this.url, this.opts)
+    .then((blob) => {
+      if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+        // In case of IE or Edge
+        this.fileName = escape(this.fileName);
+        window.navigator.msSaveOrOpenBlob(blob, this.fileName);
+        return;
+      }
+
+      var a = document.createElement("a");
+      document.body.appendChild(a);
+      a.style = "display: none";
+      
+      let url = URL.createObjectURL(blob);
+      a.href = url;
+      a.download = this.fileName;
+      a.click();
+      window.URL.revokeObjectURL(url);      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
   render() {
     if(this.url === undefined){
       return null;
     }
 
+    let title = this.fileName || 'Download';
+
     return (
       <div>
-        Hello, World! I'm {this.url}
+        <button onClick={this.downloadFile.bind(this)}>{title}</button>
       </div>
     );
   }
