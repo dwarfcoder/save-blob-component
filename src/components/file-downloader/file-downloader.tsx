@@ -22,6 +22,9 @@ export class SaveBlobComponent {
     try{
       var response = await fetch(url, {
         method: options.method || 'get',
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
         mode: 'no-cors'
       });
       if(response.ok){
