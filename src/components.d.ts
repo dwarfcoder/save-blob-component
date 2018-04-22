@@ -28,7 +28,7 @@ declare global {
 
   namespace StencilComponents {
     interface FileDownloader {
-      'fileName': string;
+      'filename': string;
       'makeRequest': (url: string, options: any) => Promise<Blob>;
       'opts': any;
       'url': string;
@@ -54,7 +54,7 @@ declare global {
   }
   namespace JSXElements {
     export interface FileDownloaderAttributes extends HTMLAttributes {
-      'fileName'?: string;
+      'filename'?: string;
       'opts'?: any;
       'url'?: string;
     }

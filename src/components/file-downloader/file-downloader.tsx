@@ -8,7 +8,7 @@ import { Component, Prop, Method } from '@stencil/core';
 export class SaveBlobComponent {
 
   @Prop() url: string;
-  @Prop() fileName: string;
+  @Prop() filename: string;
   @Prop() opts: any;
 
   @Method()
@@ -36,8 +36,8 @@ downloadFile(/*event: UIEvent*/){
     .then((blob) => {
       if (window.navigator && window.navigator.msSaveOrOpenBlob) {
         // In case of IE or Edge
-        this.fileName = escape(this.fileName);
-        window.navigator.msSaveOrOpenBlob(blob, this.fileName);
+        this.filename = escape(this.filename);
+        window.navigator.msSaveOrOpenBlob(blob, this.filename);
         return;
       }
 
@@ -47,9 +47,10 @@ downloadFile(/*event: UIEvent*/){
       
       let url = URL.createObjectURL(blob);
       a.href = url;
-      a.download = this.fileName;
+      a.download = this.filename;
       a.click();
-      window.URL.revokeObjectURL(url);      
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
     })
     .catch((err) => {
       console.log(err);
@@ -61,7 +62,7 @@ downloadFile(/*event: UIEvent*/){
       return null;
     }
 
-    let title = this.fileName || 'Download';
+    let title = this.filename || 'Download';
 
     return (
       <div><button onClick={this.downloadFile.bind(this)}>{title}</button></div>
