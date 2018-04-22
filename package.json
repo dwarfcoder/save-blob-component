@@ -1,10 +1,8 @@
 {
   "name": "save-blob-component",
+  "private": true,
   "version": "0.0.5",
   "description": "Simple File Downloader",
-  "main": "dist/mycomponent.js",
-  "types": "dist/types/components.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
