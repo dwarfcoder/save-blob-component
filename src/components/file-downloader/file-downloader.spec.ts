@@ -43,6 +43,19 @@ describe('file-downloader', () => {
 
             expect(blob !== null);
         });
+
+        it('Should fail if no URL provided', () => {
+            let blob, error;
+            element.makeRequest()
+            .then((b) => {
+                blob = b
+            })
+            .catch(err => {
+                error = err;
+            });
+
+            expect(error !== null);
+        });
     });
 
 });

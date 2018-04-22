@@ -11,6 +11,11 @@ export class FileDownloader {
 
   @Method()
   async makeRequest(url: string, options) {
+
+    if(!url){
+      throw new Error('No url provided');
+    }
+
     try{
       var response = await fetch(url, options || {});
 
