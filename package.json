@@ -15,26 +15,28 @@
     "serve": "stencil-dev-server",
     "start": "npm run dev",
     "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "test.watch": "jest --watch --no-cache",
+    "debug": "node --debug-brk --inspect ./node_modules/jest/bin/jest -i"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^0.7.22",
+    "@stencil/core": "0.7.25",
     "@stencil/dev-server": "latest",
     "@stencil/utils": "latest",
-    "@types/jest": "^21.1.1",
-    "jest": "^21.2.1"
+    "@types/jest": "^21.1.10",
+    "jest": "^21.2.1",
+    "ts-jest": "^22.4.4"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "git+https://github.com/dwarfcoder/save-blob-component.git"
   },
-  "author": "Ionic Team",
+  "author": "Aleks Solntseff",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/dwarfcoder/save-blob-component"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/dwarfcoder/save-blob-component",
   "jest": {
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"

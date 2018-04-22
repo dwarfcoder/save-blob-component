@@ -27,6 +27,40 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface FileDownloader {
+      'makeRequest': (url: string, options: any) => Promise<Blob>;
+      'url': string;
+    }
+  }
+
+  interface HTMLFileDownloaderElement extends StencilComponents.FileDownloader, HTMLStencilElement {}
+
+  var HTMLFileDownloaderElement: {
+    prototype: HTMLFileDownloaderElement;
+    new (): HTMLFileDownloaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'file-downloader': HTMLFileDownloaderElement;
+  }
+  interface ElementTagNameMap {
+    'file-downloader': HTMLFileDownloaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'file-downloader': JSXElements.FileDownloaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FileDownloaderAttributes extends HTMLAttributes {
+      'url'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface MyComponent {
       'first': string;
       'last': string;
