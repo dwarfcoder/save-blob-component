@@ -27,7 +27,7 @@ describe('file-downloader', () => {
             element = await render({
                 components : [FileDownloader],
                 html: '<file-downloader></file-downloader>'
-            })
+            });
         });
 
         it(`Shouldn't work without parameters`, () => {
