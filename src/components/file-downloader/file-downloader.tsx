@@ -64,9 +64,7 @@ downloadFile(/*event: UIEvent*/){
     let title = this.fileName || 'Download';
 
     return (
-      <div>
-        <button onClick={this.downloadFile.bind(this)}>{title}</button>
-      </div>
+      <div><button onClick={this.downloadFile.bind(this)}>{title}</button></div>
     );
   }
 }

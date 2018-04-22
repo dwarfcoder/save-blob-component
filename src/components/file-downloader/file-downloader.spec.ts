@@ -8,6 +8,7 @@ describe('file-downloader', () => {
 
     describe('rendering', () => {
         let element;
+        let element2;
         beforeEach(async () => {
             global.fetch = jest.fn().mockImplementation(() => {
                 return {
@@ -28,10 +29,19 @@ describe('file-downloader', () => {
                 components : [SaveBlobComponent],
                 html: '<file-downloader></file-downloader>'
             });
+
+            element2 = await render({
+                components : [SaveBlobComponent],
+                html: '<file-downloader url="pic.jpg" fileName="pic.jpg"></file-downloader>'
+            });
         });
 
         it(`Shouldn't work without parameters`, () => {
             expect(element.textContent.trim()).toEqual("");
+        });
+
+        it(`Should work with parameters`, () => {
+            expect(element2.textContent.trim().length).toBeGreaterThan(0);
         });
 
         it('Should fetch data', () => {
@@ -55,8 +65,8 @@ describe('file-downloader', () => {
             });
 
             expect(error !== null);
-        });
-    });
+        });                
+});
 
 });
 
