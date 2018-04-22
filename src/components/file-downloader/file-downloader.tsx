@@ -17,8 +17,13 @@ export class SaveBlobComponent {
       throw new Error('No url provided');
     }
 
+    options = options || {};
+
     try{
-      var response = await fetch(url, options || {});
+      var response = await fetch(url, {
+        method: options.method || 'get',
+        mode: 'cors'
+      });
       if(response.ok){
         let blob = await response.blob();
         return blob;
