@@ -31,7 +31,7 @@ export class FileDownloader {
     }
   }
 
-  downloadFile(event: UIEvent){
+downloadFile(/*event: UIEvent*/){
     this.makeRequest(this.url, this.opts)
     .then((blob) => {
       if (window.navigator && window.navigator.msSaveOrOpenBlob) {
@@ -43,7 +43,7 @@ export class FileDownloader {
 
       var a = document.createElement("a");
       document.body.appendChild(a);
-      a.style = "display: none";
+      //a.style = "display: none";
       
       let url = URL.createObjectURL(blob);
       a.href = url;

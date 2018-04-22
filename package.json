@@ -1,7 +1,7 @@
 {
-  "name": "my-component",
+  "name": "save-blob-component",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Simple File Downloader",
   "main": "dist/mycomponent.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
