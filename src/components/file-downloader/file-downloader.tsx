@@ -22,7 +22,7 @@ export class SaveBlobComponent {
     try{
       var response = await fetch(url, {
         method: options.method || 'get',
-        //mode: 'cors'
+        mode: 'no-cors'
       });
       if(response.ok){
         let blob = await response.blob();
