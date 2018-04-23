@@ -20,13 +20,18 @@ export class SaveBlobComponent {
     options = options || {};
 
     try{
-      var response = await fetch(url, {
-        method: options.method || 'get',
-        // headers: {
-        //   "Access-Control-Allow-Origin": "*"
-        // },
-        mode: 'cors'
-      });
+      var response = await fetch(url);
+
+      // let header = new Headers({
+      //   'Access-Control-Allow-Origin':'*'
+      // });      
+
+      // var response = await fetch(url, {
+      //   method: options.method || 'get',
+      //   headers: header,
+      //   //mode: 'cors'
+      // });
+
       if(response.ok){
         let blob = await response.blob();
         return blob;
