@@ -3,14 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <title>Save Blob Component</title>
   <script src="/build/saveblobcomponent.js"></script>
   <!-- <script src="/build/filedownloader.js"></script> -->
 
 </head>
 <body>
 
-  <file-downloader url="https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg" fileName="GodfreyKneller-IsaacNewton-1689.jpg"></file-downloader>
+  <p>
+    <file-downloader url="https://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg" fileName="GodfreyKneller-IsaacNewton-1689.jpg"></file-downloader>
+  </p>
 
+  <p>
+    <file-downloader url="http://monitoring.shtrih-m.ru/assets/Icons/arrow-green/ios/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" fileName="Icon-App-83" opts="{method:'get', headers: [{'Access-Control-Allow-Origin':'*'}]}"></file-downloader>
+  </p>
+  
 </body>
 </html>

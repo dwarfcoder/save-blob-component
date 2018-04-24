@@ -1,4 +1,4 @@
-import { Component, Prop, Method } from '@stencil/core';
+import { Component, Prop, Method, Watch } from '@stencil/core';
 
 @Component({
   tag: 'file-downloader',
@@ -11,6 +11,13 @@ export class SaveBlobComponent {
   @Prop() filename: string;
   @Prop() opts: any;
 
+  private innerOpts: any;
+
+  @Watch('opts')
+  dataDidChangeHandler(newValue: any) {
+     this.innerOpts = JSON.parse(newValue);
+  }
+
   @Method()
   async makeRequest(url: string, options) {
     if(!url){
@@ -20,17 +27,10 @@ export class SaveBlobComponent {
     options = options || {};
 
     try{
-      var response = await fetch(url);
-
-      // let header = new Headers({
-      //   'Access-Control-Allow-Origin':'*'
-      // });      
-
-      // var response = await fetch(url, {
-      //   method: options.method || 'get',
-      //   headers: header,
-      //   //mode: 'cors'
-      // });
+      var response = await fetch(url, {
+        method: options.method || 'get',
+        headers: options.headers || {},
+      });
 
       if(response.ok){
         let blob = await response.blob();
@@ -45,7 +45,7 @@ export class SaveBlobComponent {
   }
 
 downloadFile(/*event: UIEvent*/){
-    this.makeRequest(this.url, this.opts)
+    this.makeRequest(this.url, this.innerOpts)
     .then((blob) => {
       if (window.navigator && window.navigator.msSaveOrOpenBlob) {
         // In case of IE or Edge
