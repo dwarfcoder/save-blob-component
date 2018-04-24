@@ -1,6 +1,6 @@
 {
   "name": "save-blob-component",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Simple File Downloader",
   "main": "dist/saveblobcomponent.js",
   "types": "dist/types/index.d.ts",
