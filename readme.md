@@ -6,7 +6,7 @@ A simple blob saver. This discription is under construction.
 
 Just place the following line somewere in your index.html:
 ```html
-<script src='https://unpkg.com/save-blob-component@0.0.14/dist/saveblobcomponent.js'></script>
+<script src='https://unpkg.com/save-blob-component@0.0.17/dist/saveblobcomponent.js'></script>
 ```
 
 Then in your page markup file (i.e. my-page.html, or contacts.html or whatever markup file you need) call to component like this:
