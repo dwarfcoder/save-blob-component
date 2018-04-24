@@ -6,8 +6,17 @@ A simple blob saver. This discription is under construction.
 
 Just place the following line somewere in your index.html:
 ```html
-<script src='https://unpkg.com/save-blob-component@0.0.17/dist/saveblobcomponent.js'></script>
+<script src='https://unpkg.com/save-blob-component@0.0.18/dist/saveblobcomponent.js'></script>
 ```
+
+### Angular/Ionic Framework
+
+You should import CUSTOM_ELEMENTS_SCHEMA in your _app.module.ts_ file:
+```javascript
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+```
+
+## Usage
 
 Then in your page markup file (i.e. my-page.html, or contacts.html or whatever markup file you need) call to component like this:
 ```html
