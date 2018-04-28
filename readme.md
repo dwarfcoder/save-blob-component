@@ -23,9 +23,9 @@ Then in your page markup file (i.e. my-page.html, or contacts.html or whatever m
 <file-downloader url="http://example.com/some-image.jpg" fileName="some image" opts="{method:'get', headers: [{'Access-Control-Allow-Origin':'*'}]}"></file-downloader>
 ```
 Parameters:
-    * url: an url you want to download file from
-    * fileName: the name of a file. File will be placed to your specified location with this name
-    * opts: request options such as method and request headers. You can provide authentication information like access token if needed
+* url: an url you want to download file from
+* fileName: the name of a file. File will be placed to your specified location with this name
+* opts: request options such as method and request headers. You can provide authentication information like access token if needed
 
 Simpliest form (without options) is:
 ```html
